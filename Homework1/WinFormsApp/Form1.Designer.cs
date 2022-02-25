@@ -36,11 +36,12 @@ namespace WinFormsApp
             this.labelEq = new System.Windows.Forms.Label();
             this.labelRes = new System.Windows.Forms.Label();
             this.labelInfo = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCal
             // 
-            this.buttonCal.Location = new System.Drawing.Point(508, 253);
+            this.buttonCal.Location = new System.Drawing.Point(407, 253);
             this.buttonCal.Name = "buttonCal";
             this.buttonCal.Size = new System.Drawing.Size(94, 29);
             this.buttonCal.TabIndex = 0;
@@ -59,7 +60,7 @@ namespace WinFormsApp
             "/"});
             this.comboBoxOp.Location = new System.Drawing.Point(238, 153);
             this.comboBoxOp.Name = "comboBoxOp";
-            this.comboBoxOp.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxOp.Size = new System.Drawing.Size(50, 28);
             this.comboBoxOp.TabIndex = 1;
             // 
             // textBox1
@@ -71,7 +72,7 @@ namespace WinFormsApp
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(395, 153);
+            this.textBox2.Location = new System.Drawing.Point(294, 153);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(125, 27);
             this.textBox2.TabIndex = 3;
@@ -79,7 +80,7 @@ namespace WinFormsApp
             // labelEq
             // 
             this.labelEq.AutoSize = true;
-            this.labelEq.Location = new System.Drawing.Point(526, 156);
+            this.labelEq.Location = new System.Drawing.Point(425, 156);
             this.labelEq.Name = "labelEq";
             this.labelEq.Size = new System.Drawing.Size(20, 20);
             this.labelEq.TabIndex = 4;
@@ -88,7 +89,7 @@ namespace WinFormsApp
             // labelRes
             // 
             this.labelRes.AutoSize = true;
-            this.labelRes.Location = new System.Drawing.Point(552, 156);
+            this.labelRes.Location = new System.Drawing.Point(451, 156);
             this.labelRes.Name = "labelRes";
             this.labelRes.Size = new System.Drawing.Size(50, 20);
             this.labelRes.TabIndex = 5;
@@ -102,11 +103,21 @@ namespace WinFormsApp
             this.labelInfo.Size = new System.Drawing.Size(0, 20);
             this.labelInfo.TabIndex = 6;
             // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Location = new System.Drawing.Point(107, 71);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(372, 20);
+            this.labelTitle.TabIndex = 7;
+            this.labelTitle.Text = "Please input two integers and select the operator.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(611, 347);
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.labelRes);
             this.Controls.Add(this.labelEq);
@@ -130,6 +141,7 @@ namespace WinFormsApp
         private System.Windows.Forms.Label labelEq;
         private System.Windows.Forms.Label labelRes;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelTitle;
     }
 }
 

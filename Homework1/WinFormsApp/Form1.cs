@@ -20,6 +20,7 @@ namespace WinFormsApp
         private void buttonCal_Click(object sender, EventArgs e)
         {
             labelInfo.Text = "";
+            labelRes.Text = "";
             string numstr1 = textBox1.Text;
             string numstr2 = textBox2.Text;
             string op = comboBoxOp.Text;
