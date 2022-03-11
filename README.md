@@ -8,8 +8,12 @@ A simple calculator both write in console and winform.
 
 ## Homework2
 
-algorithm
+a few algorithm programs
 
 ## Homework3
 
 Shape Factory
+
+## Homework4
+
+Generics, delegates & event
