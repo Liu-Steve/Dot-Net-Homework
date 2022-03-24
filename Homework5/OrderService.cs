@@ -120,6 +120,10 @@ namespace Homework5
         /// <param name="orderID">ID of order</param>
         /// <param name="productID">ID of product</param>
         /// <param name="number">number increase or decrease</param>
+        /// <exception cref="ArgE">order isn't exist</exception>
+        /// <exception cref="ArgE">product isn't exist</exception>
+        /// <exception cref="ArgE">product isn't enough</exception>
+        /// <exception cref="ArgE">product's number isn't postive</exception>
         public void ChangeOrderDetial(int orderID, int productID, int number)
         {
             //find match order
@@ -142,6 +146,8 @@ namespace Homework5
         /// </summary>
         /// <param name="orderID">ID of order</param>
         /// <param name="clientID">ID of client</param>
+        /// <exception cref="ArgE">order isn't exist</exception>
+        /// <exception cref="ArgE">client isn't exist</exception>
         public void ChangeClient(int orderID, int clientID)
         {
             //find match order
@@ -161,6 +167,7 @@ namespace Homework5
         /// </summary>
         /// <param name="orderID">ID of order</param>
         /// <param name="discount">discount: 1 = ￥0.01</param>
+        /// <exception cref="ArgE">order isn't exist</exception>
         public void ChangeDiscount(int orderID, int discount)
         {
             //find match order
@@ -209,6 +216,7 @@ namespace Homework5
         /// delete order by ID
         /// </summary>
         /// <param name="orderID">ID of order</param>
+        /// <exception cref="ArgE">order isn't exist</exception>
         public void Delete(int orderID)
         {
             //find match order

@@ -75,6 +75,10 @@ namespace Homework5
             }
             if(!findMatch)
             {
+                if(detials.Number <= 0)
+                {
+                    throw new ArgE("product's number isn't postive");
+                }
                 Detials.Add(detials);
             }
         }

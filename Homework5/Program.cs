@@ -15,15 +15,47 @@ namespace Homework5
             Console.WriteLine(service.Orders[0]);
             //add 1 apple into order 0
             Console.WriteLine("-----add 1 apple into order 0-----");
-            service.ChangeOrderDetial(or[0], pro[0], 1);
+            try
+            { 
+                service.ChangeOrderDetial(or[0], pro[0], 1); 
+            }
+            catch(ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine(service.Orders[0]);
             //remove 1 apple from order 0
             Console.WriteLine("-----remove 1 apple from order 0-----");
-            service.ChangeOrderDetial(or[0], pro[0], -1);
+            try
+            {
+                service.ChangeOrderDetial(or[0], pro[0], -1);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine(service.Orders[0]);
             //remove 1 banana from order 0
             Console.WriteLine("-----remove 1 banana from order 0-----");
-            service.ChangeOrderDetial(or[0], pro[1], -1);
+            try
+            {
+                service.ChangeOrderDetial(or[0], pro[1], -1);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.WriteLine(service.Orders[0]);
+            //remove 10 candy from order 0
+            Console.WriteLine("-----remove 10 candy from order 0-----");
+            try
+            {
+                service.ChangeOrderDetial(or[0], pro[2], -10);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine(service.Orders[0]);
 
             //test change client and discount
@@ -32,11 +64,25 @@ namespace Homework5
             Console.WriteLine(service.Orders[1]);
             //change client
             Console.WriteLine("-----change order 1 client 1 to 2-----");
-            service.ChangeClient(or[1], cl[2]);
+            try
+            {
+                service.ChangeClient(or[1], cl[2]);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine(service.Orders[1]);
             //change discount
-            Console.WriteLine("-----change order 1 discount to ￥1.23-----");
-            service.ChangeDiscount(or[1], 123);
+            Console.WriteLine("-----change order 1 discount to ￥1.23-----"); 
+            try
+            {
+                service.ChangeDiscount(or[1], 123);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine(service.Orders[1]);
 
             //test select
@@ -86,7 +132,14 @@ namespace Homework5
             service.Orders.ForEach(o => Console.WriteLine(o));
             //delete according to order ID
             Console.WriteLine("-----delete according to order ID : 2-----");
-            service.Delete(or[2]);
+            try
+            {
+                service.Delete(or[2]);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             service.Orders.ForEach(o => Console.WriteLine(o));
         }
 
