@@ -21,3 +21,13 @@ Generics, delegates & event
 ## Homework5
 
 Order Service
+
+## Homework6
+
+XML & Unit Test
+
+## Homework7
+
+Winform drawing a tree
+
+![res](README.assets/res-16488325245761.png)
