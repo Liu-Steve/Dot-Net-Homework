@@ -118,11 +118,11 @@ public class OrderService
     //避免级联添加或修改Customer和Goods
     private static void FixOrder(Order newOrder)
     {
-        newOrder.CustomerId = newOrder.Customer.Id;
+        //newOrder.CustomerId = newOrder.Customer.Id;
         newOrder.Customer = null;
         newOrder.Details.ForEach(d =>
         {
-            d.GoodsId = d.GoodsItem.Id;
+            //d.GoodsId = d.GoodsItem.Id;
             d.GoodsItem = null;
         });
     }
