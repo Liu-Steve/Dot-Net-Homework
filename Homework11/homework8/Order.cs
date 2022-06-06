@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeWork12
+namespace homework8
 {
     public class Order
     {
@@ -49,11 +49,11 @@ namespace HomeWork12
             SenderAddress = senderAddress;
             ReceiverAddress = receiveAddress;
             Goods = new List<OrderDetails>();
-            PayTime = DateTime.Now;
-
+            PayTime = DateTime.Now;            
+            
         }
 
-        public void AddOneDetail(string name, double price, int num)
+        public void AddOneDetail(string name,double price,int num)
         {
             OrderDetails orderDetailsTemp;
             orderDetailsTemp = new OrderDetails(name, price, num);
@@ -61,7 +61,7 @@ namespace HomeWork12
         }
 
         public void AddOneDetail(OrderDetails orderDetails)
-        {
+        {            
             Goods.Add(orderDetails);
         }
 

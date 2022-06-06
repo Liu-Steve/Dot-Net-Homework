@@ -1,24 +1,20 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Homework12;
-
-//[DbConfigurationType(typeof(MySqlEFConfiguration))]
-public class OrderContext : DbContext
+namespace HomeWork12
 {
-    public OrderContext() : base()
+    //[DbConfigurationType(typeof(MySqlEFConfiguration))]
+    public class OrderContext : DbContext
     {
-        this.Database.EnsureCreated();
+        public OrderContext(DbContextOptions<OrderContext> options)
+            : base(options)
+        {
+            this.Database.EnsureCreated();
+        }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetails> Goods { get; set; }
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-            optionsBuilder.UseMySQL("server=localhost;database=orderstest;user=root;password=root"
-            , (System.Action<MySql.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder>?)null);
-    }
-
-    public DbSet<Order> Orders { get; set; }
-    public DbSet<OrderDetail> OrderDetails { get; set; }
-    public DbSet<Goods> Goods { get; set; }
-    public DbSet<Customer> Customers { get; set; }
 }

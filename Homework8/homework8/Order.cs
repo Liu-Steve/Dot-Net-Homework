@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeWork12
+namespace homework8
 {
     public class Order
     {
-        public static int count = 0;
+        private static int count = 0;
         private double costSum = 0;
         public string Sender { get; set; }
         public string Receiver { get; set; }
-        public DateTime PayTime { get; set; }
+        public DateTime PayTime { get; }
         public string SenderAddress { get; set; }
         public string ReceiverAddress { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int OrderId { get; set; }
-        public List<OrderDetails> Goods { get; set; }
+        public int ID { get; set; }
+        public List<OrderDetails> Goods = new List<OrderDetails>();
         public double CostSum
         {
             get
@@ -31,44 +29,40 @@ namespace HomeWork12
                 return costSum;
             }
         }
-
         public Order()
         {
-            Goods = new List<OrderDetails>();
             count++;
-            OrderId = count;
+            ID = count;
             PayTime = DateTime.Now;
         }
-
         public Order(string sender, string receiver, string senderAddress, string receiveAddress)
         {
             count++;
-            OrderId = count;
             Sender = sender;
             Receiver = receiver;
             SenderAddress = senderAddress;
             ReceiverAddress = receiveAddress;
-            Goods = new List<OrderDetails>();
-            PayTime = DateTime.Now;
-
+            PayTime = DateTime.Now;            
+            ID = count;
         }
 
-        public void AddOneDetail(string name, double price, int num)
+        public void AddOneDetail(string name,double price,int num)
         {
             OrderDetails orderDetailsTemp;
             orderDetailsTemp = new OrderDetails(name, price, num);
             Goods.Add(orderDetailsTemp);
         }
-
         public void AddOneDetail(OrderDetails orderDetails)
-        {
+        {            
             Goods.Add(orderDetails);
         }
+
+
 
         public override string ToString()
         {
             StringBuilder str = new StringBuilder();
-            str.Append("订单ID：" + OrderId);
+            str.Append("订单ID：" + ID);
             str.Append('\n');
             str.Append("下单时间：" + PayTime + '\n');
             str.Append("用户：" + Sender + "-------->" + Receiver + '\n');
@@ -82,5 +76,6 @@ namespace HomeWork12
             str.Append('\n');
             return str.ToString();
         }
+
     }
 }
